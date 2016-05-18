@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>页面可配置</title>
+
+<!-- JQUERYUI CSS -->
+<link rel="stylesheet" href="./plugin/jquery-ui/css/jquery-ui.css">
+
+<!--  BOOTSTRAP CSS -->
+<link rel="stylesheet"
+	href="./plugin/bootstrap-3.3.5/css/bootstrap.min.css">
+
+<!--  INDEX CSS -->
+<link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<p class="layout" layout="1">
+					<span class="btn btn-default">layout1</span>
+				<p class="layout" layout="2">
+					<span class="btn btn-default">layout2</span>
+				<p class="layout" layout="3">
+					<span class="btn btn-default">layout3</span>
+				</p>
+			</div>
+			<div id="dropzone" class="col-sm-6" style="min-height: 100px;">
+			</div>
+		</div>
+	</div>
+	<div id="layouts" class="container" style="width: 360px;">
+
+		<h1>layout1</h1>
+		<!-- layout1 -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<div class="col-xs-12 col-sm-12">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNzQ5IiBoZWlnaHQ9IjI0MCIgdmlld0JveD0iMCAwIDc0OSAyNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjA5YmFkZTIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZTozN3B0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MDliYWRlMiI+PHJlY3Qgd2lkdGg9Ijc0OSIgaGVpZ2h0PSIyNDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIyNzguNDg0Mzc1IiB5PSIxMzYuNSI+NzQ5eDI0MDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+					</span>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<h1>layout2</h1>
+		<!-- layout2 -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<div class="col-xs-6 col-sm-6">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDMwOCAxNTAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExMTEyMGIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTExMTIwYiI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNTAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iODEuNiI+MzA4eDE1MDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+					</span>
+				</div>
+				<div class="col-xs-6 col-sm-6">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDMwOCAxNTAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExMTEyMGIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTExMTIwYiI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNTAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iODEuNiI+MzA4eDE1MDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- layout2 -->
+
+
+
+		<h1>layout3</h1>
+		<!-- layout3 -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<div class="col-xs-8 col-sm-8">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTMyIiBoZWlnaHQ9IjMxOSIgdmlld0JveD0iMCAwIDUzMiAzMTkiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmZDM1Y2IgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToyN3B0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGZkMzVjYiI+PHJlY3Qgd2lkdGg9IjUzMiIgaGVpZ2h0PSIzMTkiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxOTUuOTI5Njg3NSIgeT0iMTcxLjgiPjUzMngzMTk8L3RleHQ+PC9nPjwvZz48L3N2Zz4=">
+					</span>
+				</div>
+				<div class="col-xs-4 col-sm-4">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjY2IiBoZWlnaHQ9IjMxOSIgdmlld0JveD0iMCAwIDI2NiAzMTkiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmZTk2YmYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGZlOTZiZiI+PHJlY3Qgd2lkdGg9IjI2NiIgaGVpZ2h0PSIzMTkiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MS40ODQzNzUiIHk9IjE2Ni43Ij4yNjZ4MzE5PC90ZXh0PjwvZz48L2c+PC9zdmc+">
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- layout3 -->
+
+
+
+		<h1>layout4</h1>
+		<!-- layout4 -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<div class="col-xs-4 col-sm-4">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjY2IiBoZWlnaHQ9IjMxOSIgdmlld0JveD0iMCAwIDI2NiAzMTkiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmZTk2YmYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGZlOTZiZiI+PHJlY3Qgd2lkdGg9IjI2NiIgaGVpZ2h0PSIzMTkiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MS40ODQzNzUiIHk9IjE2Ni43Ij4yNjZ4MzE5PC90ZXh0PjwvZz48L2c+PC9zdmc+">
+					</span>
+				</div>
+				<div class="col-xs-8 col-sm-8">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTMyIiBoZWlnaHQ9IjMxOSIgdmlld0JveD0iMCAwIDUzMiAzMTkiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmZDM1Y2IgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToyN3B0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGZkMzVjYiI+PHJlY3Qgd2lkdGg9IjUzMiIgaGVpZ2h0PSIzMTkiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxOTUuOTI5Njg3NSIgeT0iMTcxLjgiPjUzMngzMTk8L3RleHQ+PC9nPjwvZz48L3N2Zz4=">
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- layout4 -->
+
+
+
+
+		<h1>layout5</h1>
+		<!-- layout5 -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<div class="col-xs-4 col-sm-4">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjY3IiBoZWlnaHQ9IjMyMSIgdmlld0JveD0iMCAwIDI2NyAzMjEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmZjgxY2EgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGZmODFjYSI+PHJlY3Qgd2lkdGg9IjI2NyIgaGVpZ2h0PSIzMjEiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MS45ODQzNzUiIHk9IjE2Ny43Ij4yNjd4MzIxPC90ZXh0PjwvZz48L2c+PC9zdmc+">
+					</span>
+				</div>
+				<div class="col-xs-4 col-sm-4">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjY3IiBoZWlnaHQ9IjMyMSIgdmlld0JveD0iMCAwIDI2NyAzMjEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmZjgxY2EgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGZmODFjYSI+PHJlY3Qgd2lkdGg9IjI2NyIgaGVpZ2h0PSIzMjEiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MS45ODQzNzUiIHk9IjE2Ny43Ij4yNjd4MzIxPC90ZXh0PjwvZz48L2c+PC9zdmc+">
+					</span>
+				</div>
+				<div class="col-xs-4 col-sm-4">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjY3IiBoZWlnaHQ9IjMyMSIgdmlld0JveD0iMCAwIDI2NyAzMjEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmZjgxY2EgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGZmODFjYSI+PHJlY3Qgd2lkdGg9IjI2NyIgaGVpZ2h0PSIzMjEiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MS45ODQzNzUiIHk9IjE2Ny43Ij4yNjd4MzIxPC90ZXh0PjwvZz48L2c+PC9zdmc+">
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- layout5 -->
+
+
+
+
+		<h1>layout6</h1>
+		<!-- layout6 -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<div class="col-xs-6 col-sm-6">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjQyOCIgdmlld0JveD0iMCAwIDMwOCA0MjgiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBhMmUzNDAgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToyMXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGEyZTM0MCI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSI0MjgiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5OS41IiB5PSIyMjMuMyI+MzA4eDQyODwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+					</span>
+				</div>
+				<div class="col-xs-6 col-sm-6">
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjIxNCIgdmlld0JveD0iMCAwIDMwOCAyMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmNTNmNzIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGY1M2Y3MiI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIyMTQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iMTEzLjYiPjMwOHgyMTQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=">
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjIxNCIgdmlld0JveD0iMCAwIDMwOCAyMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmNTNmNzIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGY1M2Y3MiI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIyMTQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iMTEzLjYiPjMwOHgyMTQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=">
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- layout6 -->
+
+
+
+
+		<h1>layout7</h1>
+		<!-- layout7 -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<div class="col-xs-6 col-sm-6">
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjIxNCIgdmlld0JveD0iMCAwIDMwOCAyMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmNTNmNzIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGY1M2Y3MiI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIyMTQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iMTEzLjYiPjMwOHgyMTQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=">
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjIxNCIgdmlld0JveD0iMCAwIDMwOCAyMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmNTNmNzIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGY1M2Y3MiI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIyMTQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iMTEzLjYiPjMwOHgyMTQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=">
+						</span>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-6">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjQyOCIgdmlld0JveD0iMCAwIDMwOCA0MjgiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBhMmUzNDAgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToyMXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGEyZTM0MCI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSI0MjgiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5OS41IiB5PSIyMjMuMyI+MzA4eDQyODwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- layout7 -->
+
+
+
+
+		<h1>layout8</h1>
+		<!-- layout8 -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<div class="col-xs-6 col-sm-6">
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE0MyIgdmlld0JveD0iMCAwIDMwOCAxNDMiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExODM2MjUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE4MzYyNSI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNDMiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iNzguMSI+MzA4eDE0MzwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE0MyIgdmlld0JveD0iMCAwIDMwOCAxNDMiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExODM2MjUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE4MzYyNSI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNDMiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iNzguMSI+MzA4eDE0MzwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE0MyIgdmlld0JveD0iMCAwIDMwOCAxNDMiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExODM2MjUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE4MzYyNSI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNDMiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iNzguMSI+MzA4eDE0MzwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+						</span>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-6">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjQyOSIgdmlld0JveD0iMCAwIDMwOCA0MjkiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExNzVkNDIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToyMXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE3NWQ0MiI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSI0MjkiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5OS41IiB5PSIyMjMuOCI+MzA4eDQyOTwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- layout8 -->
+
+
+
+
+		<h1>layout9</h1>
+		<!-- layout9 -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<div class="col-xs-6 col-sm-6">
+					<span href="#" class="thumbnail"> <img
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjQyOSIgdmlld0JveD0iMCAwIDMwOCA0MjkiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExNzVkNDIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToyMXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE3NWQ0MiI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSI0MjkiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5OS41IiB5PSIyMjMuOCI+MzA4eDQyOTwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+					</span>
+				</div>
+				<div class="col-xs-6 col-sm-6">
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE0MyIgdmlld0JveD0iMCAwIDMwOCAxNDMiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExODM2MjUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE4MzYyNSI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNDMiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iNzguMSI+MzA4eDE0MzwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE0MyIgdmlld0JveD0iMCAwIDMwOCAxNDMiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExODM2MjUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE4MzYyNSI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNDMiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iNzguMSI+MzA4eDE0MzwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE0MyIgdmlld0JveD0iMCAwIDMwOCAxNDMiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExODM2MjUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE4MzYyNSI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNDMiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iNzguMSI+MzA4eDE0MzwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- layout9 -->
+
+
+
+
+		<h1>layout10</h1>
+		<!-- layout10 -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<div class="col-xs-6 col-sm-6">
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjIxNCIgdmlld0JveD0iMCAwIDMwOCAyMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmNTNmNzIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGY1M2Y3MiI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIyMTQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iMTEzLjYiPjMwOHgyMTQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=">
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjIxNCIgdmlld0JveD0iMCAwIDMwOCAyMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmNTNmNzIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGY1M2Y3MiI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIyMTQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iMTEzLjYiPjMwOHgyMTQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=">
+						</span>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-6">
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE0MyIgdmlld0JveD0iMCAwIDMwOCAxNDMiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExODM2MjUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE4MzYyNSI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNDMiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iNzguMSI+MzA4eDE0MzwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE0MyIgdmlld0JveD0iMCAwIDMwOCAxNDMiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExODM2MjUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE4MzYyNSI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNDMiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iNzguMSI+MzA4eDE0MzwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE0MyIgdmlld0JveD0iMCAwIDMwOCAxNDMiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExODM2MjUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE4MzYyNSI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNDMiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iNzguMSI+MzA4eDE0MzwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- layout10 -->
+
+
+
+
+
+		<h1>layout11</h1>
+		<!-- layout10 -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<div class="col-xs-6 col-sm-6">
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE0MyIgdmlld0JveD0iMCAwIDMwOCAxNDMiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExODM2MjUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE4MzYyNSI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNDMiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iNzguMSI+MzA4eDE0MzwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE0MyIgdmlld0JveD0iMCAwIDMwOCAxNDMiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExODM2MjUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE4MzYyNSI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNDMiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iNzguMSI+MzA4eDE0MzwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE0MyIgdmlld0JveD0iMCAwIDMwOCAxNDMiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjExODM2MjUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MTE4MzYyNSI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIxNDMiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iNzguMSI+MzA4eDE0MzwvdGV4dD48L2c+PC9nPjwvc3ZnPg==">
+						</span>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-6">
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjIxNCIgdmlld0JveD0iMCAwIDMwOCAyMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmNTNmNzIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGY1M2Y3MiI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIyMTQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iMTEzLjYiPjMwOHgyMTQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=">
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12">
+						<span href="#" class="thumbnail"> <img
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjIxNCIgdmlld0JveD0iMCAwIDMwOCAyMTQiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU0NjBmNTNmNzIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNXB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTQ2MGY1M2Y3MiI+PHJlY3Qgd2lkdGg9IjMwOCIgaGVpZ2h0PSIyMTQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTUuMDcwMzEyNSIgeT0iMTEzLjYiPjMwOHgyMTQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=">
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- layout11 -->
+
+
+
+
+	</div>
+
+	<!-- /.modal -->
+	<div id="modalEdit" class="modal fade" role="dialog"
+		aria-labelledby="gridSystemModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="gridSystemModalLabel">编辑</h4>
+				</div>
+				<div class="modal-body">
+
+					<form enctype="multipart/form-data">
+						<input id="file" type="file" accept="image/*" />
+					</form>
+					<div class="container-fluid">
+						<form id="modalEditBody" class="form-horizontal"></form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default">保存</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.modal -->
+
+	<!-- JQUERY JS -->
+	<script src="./js/jquery.min.js"></script>
+
+	<!-- JQUERYUI JS -->
+	<script src="./plugin/jquery-ui/js/jquery-ui.js"></script>
+
+	<!-- BOOTSTRAP JS -->
+	<script src="./plugin/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+
+	<!-- INDEX JS -->
+	<script src="./js/index.js"></script>
+</body>
+</html>
